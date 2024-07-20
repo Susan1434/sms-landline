@@ -1,0 +1,20 @@
+{
+  "name": "sms-landline-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.44.4",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "twilio": "^5.2.2"
+  }
+}
