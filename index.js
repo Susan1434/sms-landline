@@ -9,14 +9,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Supabase config
-const supabaseUrl = 'https://qiqdlonmcwsyncnbfigl.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFpcWRsb25tY3dzeW5jbmJmaWdsIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyMTQ2MzQwNSwiZXhwIjoyMDM3MDM5NDA1fQ.Bj96lbyRm48HuZaQsBWQIQIgccjy8zEVlfwozR1v3Sg';
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Twilio configuration
-const accountSid = 'ACa3d4137f41a1ac3825d183810d5b4df2';
-const authToken = '430efbc4ef948d48b8a2c068cbafb890';
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioClient = new twilio(accountSid, authToken);
+
 
 // To handle incoming SMS from Twilio
 app.post('/sms-receive', async (req, res) => {
